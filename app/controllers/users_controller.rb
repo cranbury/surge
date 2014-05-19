@@ -11,6 +11,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.create(user_params)
+    login(@user)
+    redirect_to user_path(@user)
+  end
 
+  private
+  def user_params
+    params.permit(:email, :first_name, :password, :password_confirmation)
   end
 end
