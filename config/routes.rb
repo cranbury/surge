@@ -6,7 +6,9 @@ Surge::Application.routes.draw do
   delete "/session", to: "session#destroy"
 
   resources :users, only: [:new, :create, :show] do
-    resources :teams, only: [:new, :create, :show]
+    resources :teams, only: [:new, :create, :show] do
+      resources :players, only: [:create]
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :authenticate!
 
   def new
     @user = params[:user_id]
@@ -11,6 +12,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @user = params[:user_id]
     @team = Team.find(params[:id])
   end
 
