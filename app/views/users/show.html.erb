@@ -4,3 +4,6 @@
   <% @teams.each do |team| %>
     <li><%= team.name %></li>
   <% end %>
+
+
+<%= link_to "Create a Team", new_user_team_path(@user) %>

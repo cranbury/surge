@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "the sign in process", :type => :feature do
+describe "team creation", :type => :feature do
   before :each do
     User.create(:email => 'user@example.com', password: 'swordfish', password_confirmation: 'swordfish')
     
@@ -15,10 +15,10 @@ describe "the sign in process", :type => :feature do
 
     click_link 'Create a Team'
 
-    fill_in 'Team Name', with: 'Sharks'
-    fill_in 'Description', with: 'Varsity Water Polo'
+    fill_in 'name', with: 'Sharks'
+    fill_in 'description', with: 'Varsity Water Polo'
 
-    click_button 'Submit'
+    click_button 'Create Team'
 
     expect(page).to have_content 'Sharks'
   end
