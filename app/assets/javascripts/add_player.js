@@ -65,6 +65,6 @@ $(document).ready(function() {
   var players = new PlayerCollection();
   var listView = new ListView({collection: players});
   var formView = new FormView({collection: players});
-  players.fetch({ reset: true });
+  players.fetch();
 });
 });
