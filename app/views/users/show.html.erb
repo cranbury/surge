@@ -3,6 +3,8 @@
 <ul><h5>Teams</h5>
   <% @teams.each do |team| %>
     <a href='<%= user_team_path(@user, team) %>'><li><%= team.name %></li></a>
+    <%= link_to "Edit", edit_user_team_path(@user, team) %>
+
   <% end %>
 
 

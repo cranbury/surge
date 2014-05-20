@@ -16,6 +16,18 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
+  def edit
+    @team = Team.find(params[:id])
+  end
+
+  def update
+    @team = Team.find(params[:id])
+    binding.pry
+    @team.update(name: params["team"]["name"], description: params["team"]["description"])
+    binding.pry
+    redirect_to "/"
+  end
+
   private
   def team_params
     params.permit(:name, :description, :user_id)

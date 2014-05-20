@@ -6,7 +6,7 @@ Surge::Application.routes.draw do
   delete "/session", to: "session#destroy"
 
   resources :users, only: [:new, :create, :show] do
-    resources :teams, only: [:new, :create, :show] do
+    resources :teams do
       resources :players, except: [:update, :edit]
     end
   end
