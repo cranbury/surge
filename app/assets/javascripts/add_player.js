@@ -1,4 +1,4 @@
-$( function(){
+$( document ).ready(function(){
 var Player = Backbone.Model.extend({ 
   urlRoot: app.postPath
 });
@@ -41,7 +41,6 @@ var FormView = Backbone.View.extend({
 
   createPlayer: function(e) {
     e.preventDefault();
-    debugger;
     var name = this.el.elements["name"].value;
     var email = this.el.elements["email"].value;
     this.collection.create({email: email, name: name});
@@ -66,6 +65,6 @@ $(document).ready(function() {
   var players = new PlayerCollection();
   var listView = new ListView({collection: players});
   var formView = new FormView({collection: players});
-  players.fetch();
+  players.fetch({ reset: true });
 });
 });
