@@ -10,6 +10,10 @@ Surge::Application.routes.draw do
       resources :players, except: [:update, :edit]
     end
   end
+
+
+  match '/users/:user_id/teams/:id/auth_destroy', to: 'teams#auth_destroy', via: :delete, as: :auth_destroy
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

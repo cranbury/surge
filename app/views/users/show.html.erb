@@ -4,8 +4,9 @@
   <% @teams.each do |team| %>
     <a href='<%= user_team_path(@user, team) %>'><li><%= team.name %></li></a>
     <%= link_to "Edit", edit_user_team_path(@user, team) %>
+    <%= link_to 'Delete', user_team_path(@user, team), method: :delete %>
 
   <% end %>
 
-
+<br>
 <%= link_to "Create a Team", new_user_team_path(@user) %>

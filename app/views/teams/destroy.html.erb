@@ -1,0 +1,6 @@
+<%= form_for @team, url: auth_destroy_path(@user, @team), method: :delete do |f| %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+<br>
+  <%= f.submit "Delete" %>
+<% end %>
