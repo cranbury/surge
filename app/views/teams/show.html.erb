@@ -7,7 +7,7 @@
   <%= text_field_tag :name %>
 
   <%= label_tag :email %>
-  <%= text_field_tag :email %>
+  <%= email_field_tag :email %>
 
   <input id='add-player' name='commit' type='submit' value='Add Player'>
 
@@ -18,4 +18,12 @@
 <script>
   var app = {};
   app.postPath = "<%= user_team_players_path(@user, @team)%>";
+</script>
+
+<script type="template" class="template">
+  <li>
+    <%%= player.get('name') %>
+    <%%= player.get('email') %>
+    <span>&times;</span>
+  </li>
 </script>

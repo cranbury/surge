@@ -7,7 +7,7 @@ Surge::Application.routes.draw do
 
   resources :users, only: [:new, :create, :show] do
     resources :teams, only: [:new, :create, :show] do
-      resources :players, only: [:create]
+      resources :players, except: [:update, :edit]
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
